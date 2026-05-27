@@ -1,0 +1,29 @@
+
+> gene-guard-backend@1.0.0 start
+> node server.js
+
+(node:33176) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/Downloads/Gene-Guard-agents-v3%20(2)/Gene-Guard-agents-v3/Gene-Guard-main/src/data/dnaAgents.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to D:\Downloads\Gene-Guard-agents-v3 (2)\Gene-Guard-agents-v3\Gene-Guard-main\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[2026-04-04T10:34:00.250Z] [INFO] Starting Gene-Guard backend on port 5050...
+✓ Gemini client initialized with gemini-2.5-flash
+[2026-04-04T10:34:00.252Z] [INFO] ✓ Gemini client initialized
+[2026-04-04T10:34:01.856Z] [INFO] ✓ Gemini API connection successful
+[2026-04-04T10:34:01.859Z] [INFO] ✓ Server listening on http://localhost:5050
+[2026-04-04T10:34:01.859Z] [INFO] Available endpoints:
+[2026-04-04T10:34:01.860Z] [INFO]   GET  /health
+[2026-04-04T10:34:01.860Z] [INFO]   GET  /api/dna/configs
+[2026-04-04T10:34:01.860Z] [INFO]   POST /api/dna/patient/evaluate
+[2026-04-04T10:34:01.860Z] [INFO]   POST /api/dna/run/:agentId
+[2026-04-04T10:34:01.860Z] [INFO]   POST /api/dna/simplify-report-ai
+[2026-04-04T10:34:21.393Z] [INFO] Running agent: report-simplifier-agent
+[2026-04-04T10:34:21.394Z] [INFO] Report Simplifier: clinicalNote length=60, geneName=BRCA1
+[2026-04-04T10:34:21.394Z] [INFO] Attempting Gemini for report simplification: BRCA1
+[2026-04-04T10:34:25.979Z] [WARN] Gemini report simplification failed: Response contains inappropriate medical language and cannot be returned
+[2026-04-04T10:34:25.980Z] [INFO] Using rule-based report simplification (fallback)
+[2026-04-04T10:35:31.670Z] [INFO] Running agent: report-simplifier-agent
+[2026-04-04T10:35:31.670Z] [INFO] Report Simplifier: clinicalNote length=35, geneName=BRCA1
+[2026-04-04T10:35:31.670Z] [INFO] Attempting Gemini for report simplification: BRCA1
+[2026-04-04T10:35:37.312Z] [WARN] Gemini report simplification failed: Response contains inappropriate medical language and cannot be returned
+[2026-04-04T10:35:37.312Z] [INFO] Using rule-based report simplification (fallback)

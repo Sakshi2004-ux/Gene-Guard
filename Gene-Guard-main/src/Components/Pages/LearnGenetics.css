@@ -1,0 +1,1507 @@
+/* ==========================================
+   ISOLATED CSS FOR LEARN GENETICS PAGE
+   All styles scoped under .learn-genetics-page-wrapper
+   FULLY UPDATED VERSION - Feb 2026
+   ========================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* ==========================================
+   Scoped Reset
+   ========================================== */
+.learn-genetics-page-wrapper * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.learn-genetics-page-wrapper {
+  /* Color Palette - Snow Sky Blue Theme */
+  --sky-blue: #E8F4F8;
+  --light-blue: #C7E7F2;
+  --soft-blue: #A8D8EA;
+  --medium-blue: #7FC4DB;
+  --accent-blue: #5AADCC;
+  --deep-blue: #3B8EA5;
+  --text-dark: #2C3E50;
+  --text-medium: #5D6D7E;
+  --text-light: #85929E;
+  --white: #FFFFFF;
+  --off-white: #F8FAFB;
+  --light-snow-blue: #B8E5F5;
+}
+
+/* ==========================================
+   Global Styles
+   ========================================== */
+.learn-genetics-page-wrapper .learn-genetics-page {
+  font-family: 'Poppins', sans-serif;
+  color: var(--text-dark);
+  background: var(--off-white);
+  overflow-x: hidden;
+}
+
+/* ==========================================
+   NAVBAR STYLES - SEAMLESS TRANSPARENCY
+   ========================================== */
+
+.learn-genetics-page-wrapper .main-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 1.5rem 0;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  /* Initial state is transparent to blend with the light blue hero */
+  background: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border-bottom: 1px solid transparent;
+}
+
+/* Scrolled State - Transitions to the dark glassmorphism */
+.learn-genetics-page-wrapper .navbar-scrolled {
+  padding: 0.75rem 0;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(168, 216, 234, 0.2);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+}
+
+.learn-genetics-page-wrapper .nav-content {
+  max-width: 1300px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+}
+
+/* Logo Section */
+.learn-genetics-page-wrapper .nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.learn-genetics-page-wrapper .logo-circle {
+  width: 20px;
+  height: 20px;
+  background-color: var(--accent-blue);
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(90, 173, 204, 0.5);
+}
+
+.learn-genetics-page-wrapper .logo-brand {
+  /* INITIALLY DARK to be visible on light blue hero */
+  color: var(--deep-blue);
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  transition: color 0.3s ease;
+}
+
+.learn-genetics-page-wrapper .navbar-scrolled .logo-brand {
+  /* FLIPS TO WHITE on scroll */
+  color: #ffffff;
+}
+
+/* Nav links */
+.learn-genetics-page-wrapper .nav-links {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.learn-genetics-page-wrapper .nav-link {
+  /* INITIALLY DARK for visibility */
+  color: var(--text-dark);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  opacity: 0.9;
+}
+
+.learn-genetics-page-wrapper .navbar-scrolled .nav-link {
+  /* FLIPS TO LIGHT GRAY on scroll */
+  color: #cbd5e1;
+}
+
+.learn-genetics-page-wrapper .nav-link:hover {
+  color: var(--accent-blue);
+  opacity: 1;
+}
+
+.learn-genetics-page-wrapper .navbar-scrolled .nav-link:hover {
+  color: #4ade80; /* Green accent for dark mode */
+}
+
+/* Profile & Dropdown Styles */
+.learn-genetics-page-wrapper .nav-right-section {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  padding-right: 2.5rem;
+}
+
+.learn-genetics-page-wrapper .profile-container {
+  position: relative;
+}
+
+/* Clean Circle Profile Icon */
+.learn-genetics-page-wrapper .profile-trigger {
+  /* Initially dark borders for the light theme */
+  background: rgba(59, 142, 165, 0.05);
+  border: 1.5px solid rgba(59, 142, 165, 0.2);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--deep-blue);
+  transition: all 0.3s ease;
+}
+
+.learn-genetics-page-wrapper .navbar-scrolled .profile-trigger {
+  /* Flips to light borders for the dark theme */
+  background: rgba(255, 255, 255, 0.03);
+  border-color: rgba(255, 255, 255, 0.1);
+  color: #94a3b8;
+}
+
+.learn-genetics-page-wrapper .profile-trigger:hover,
+.learn-genetics-page-wrapper .profile-trigger.active {
+  border-color: rgba(255, 255, 255, 0.25);
+  color: #e2e8f0;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.learn-genetics-page-wrapper .profile-icon {
+  width: 19px;
+  height: 19px;
+}
+
+/* Professional Seamless Dropdown */
+.learn-genetics-page-wrapper .profile-dropdown {
+  position: absolute;
+  top: calc(100% + 12px);
+  right: 0;
+  width: 190px;
+  background: rgba(15, 23, 42, 0.97);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 0.5rem;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+  animation: learn-fadeIn 0.25s ease forwards;
+  z-index: 1001;
+}
+
+@keyframes learn-fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.learn-genetics-page-wrapper .dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.7rem 0.9rem;
+  color: #cbd5e1;
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  margin-bottom: 0.15rem;
+  background: transparent;
+}
+
+.learn-genetics-page-wrapper .dropdown-item:last-child {
+  margin-bottom: 0;
+}
+
+.learn-genetics-page-wrapper .dropdown-item:hover {
+  background: transparent;
+  color: #f1f5f9;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1.5px;
+}
+
+.learn-genetics-page-wrapper .dropdown-item:active {
+  transform: scale(0.98);
+}
+
+/* Subtle separator */
+.learn-genetics-page-wrapper .dropdown-separator {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.06);
+  margin: 0.4rem 0.5rem;
+}
+
+/* Sign up - clean, no background */
+.learn-genetics-page-wrapper .signup-special {
+  background: transparent;
+  color: #f1f5f9;
+  font-weight: 600;
+  margin-top: 0.4rem;
+}
+
+.learn-genetics-page-wrapper .signup-special:hover {
+  background: transparent;
+  color: #fff;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1.5px;
+}
+
+/* Hamburger Menu Styles */
+.learn-genetics-page-wrapper .hamburger-menu {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 8px;
+  z-index: 1002;
+  background: transparent;
+  border: none;
+}
+
+.learn-genetics-page-wrapper .hamburger-line {
+  width: 24px;
+  height: 2px;
+  background-color: var(--deep-blue); /* Initially dark */
+  transition: all 0.3s ease;
+  border-radius: 2px;
+}
+
+.learn-genetics-page-wrapper .navbar-scrolled .hamburger-line {
+  background-color: #cbd5e1; /* Flips to light */
+}
+
+.learn-genetics-page-wrapper .hamburger-menu.active .hamburger-line:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+
+.learn-genetics-page-wrapper .hamburger-menu.active .hamburger-line:nth-child(2) {
+  opacity: 0;
+}
+
+.learn-genetics-page-wrapper .hamburger-menu.active .hamburger-line:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* Mobile Menu Overlay */
+.learn-genetics-page-wrapper .mobile-menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(15, 23, 42, 0.98);
+  backdrop-filter: blur(20px);
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  animation: learn-fadeIn 0.3s ease;
+}
+
+.learn-genetics-page-wrapper .mobile-menu-overlay .nav-link {
+  font-size: 1.5rem;
+  color: #cbd5e1;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.learn-genetics-page-wrapper .mobile-menu-overlay .nav-link:hover {
+  color: #4ade80;
+  transform: scale(1.05);
+}
+
+/* ==========================================
+   Hero Section - CORRECTED COLORS
+   ========================================== */
+.learn-genetics-page-wrapper .hero-section {
+  background: linear-gradient(135deg, var(--sky-blue) 0%, var(--light-blue) 100%);
+  padding: 8rem 5% 8rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.learn-genetics-page-wrapper .hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(74, 180, 218, 0.4) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.learn-genetics-page-wrapper .hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  margin: 0 auto;
+  animation: fadeInUp 0.8s ease;
+}
+
+.learn-genetics-page-wrapper .hero-title {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 4.5rem;
+  font-weight: 700;
+  /* CORRECTED COLOR - Medium blue for visibility */
+  color: #5AADCC;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  letter-spacing: -2px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.learn-genetics-page-wrapper .hero-subtitle {
+  font-size: 1.4rem;
+  /* CORRECTED COLOR - Darker gray for better readability */
+  color: #5D6D7E;
+  font-weight: 400;
+  line-height: 1.5;
+  margin-bottom: 3rem;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==========================================
+   Binary to DNA Animation
+   ========================================== */
+.learn-genetics-page-wrapper .dna-animation-container {
+  margin-top: 4rem;
+  padding: 3rem;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+  border: 2px solid rgba(168, 216, 234, 0.3);
+}
+
+.learn-genetics-page-wrapper .dna-text-display {
+  font-family: 'Courier New', monospace;
+  font-size: 2rem;
+  font-weight: 600;
+  /* CORRECTED COLOR - Medium blue matching the design */
+  color: #5AADCC;
+  min-height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, rgba(232, 244, 248, 0.6), rgba(199, 231, 242, 0.6));
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  letter-spacing: 2px;
+  overflow-wrap: break-word;
+  word-break: break-all;
+  transition: all 0.3s ease;
+}
+
+.learn-genetics-page-wrapper .dna-text-display.animating {
+  animation: pulse 2s ease-in-out infinite;
+  box-shadow: 0 0 20px rgba(90, 173, 204, 0.3);
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 20px rgba(90, 173, 204, 0.3);
+  }
+  50% {
+    transform: scale(1.02);
+    box-shadow: 0 0 30px rgba(90, 173, 204, 0.5);
+  }
+}
+
+.learn-genetics-page-wrapper .dna-animation-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--accent-blue);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.learn-genetics-page-wrapper .animation-dot {
+  width: 10px;
+  height: 10px;
+  background: var(--accent-blue);
+  border-radius: 50%;
+  animation: blink 1.5s ease-in-out infinite;
+}
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.3;
+    transform: scale(0.8);
+  }
+}
+
+/* ==========================================
+   Content Sections - Alternating Layout
+   ========================================== */
+.learn-genetics-page-wrapper .content-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.learn-genetics-page-wrapper .section-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  padding: 4rem 5%;
+  align-items: center;
+}
+
+/* Image Right Layout */
+.learn-genetics-page-wrapper .section-image-right .section-container {
+  grid-template-areas: "text image";
+}
+
+.learn-genetics-page-wrapper .section-image-right .text-content {
+  grid-area: text;
+}
+
+.learn-genetics-page-wrapper .section-image-right .image-content {
+  grid-area: image;
+}
+
+/* Image Left Layout */
+.learn-genetics-page-wrapper .section-image-left .section-container {
+  grid-template-areas: "image text";
+}
+
+.learn-genetics-page-wrapper .section-image-left .text-content {
+  grid-area: text;
+}
+
+.learn-genetics-page-wrapper .section-image-left .image-content {
+  grid-area: image;
+}
+
+/* Alternating Background Colors */
+.learn-genetics-page-wrapper .section-image-right {
+  background: var(--white);
+}
+
+.learn-genetics-page-wrapper .section-image-left {
+  background: var(--off-white);
+}
+
+/* ==========================================
+   Text Content Styling
+   ========================================== */
+.learn-genetics-page-wrapper .text-content {
+  padding: 2rem 0;
+}
+
+.learn-genetics-page-wrapper .content-wrapper {
+  max-width: 600px;
+}
+
+.learn-genetics-page-wrapper .section-label {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--accent-blue);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+  padding: 0.4rem 1rem;
+  background: rgba(90, 173, 204, 0.1);
+  border-radius: 20px;
+}
+
+.learn-genetics-page-wrapper .text-content h2 {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.learn-genetics-page-wrapper .lead-text {
+  font-size: 1.25rem;
+  color: var(--text-medium);
+  font-weight: 500;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+.learn-genetics-page-wrapper .text-content p {
+  font-size: 1.05rem;
+  color: var(--text-medium);
+  line-height: 1.9;
+  margin-bottom: 1.2rem;
+}
+
+/* ==========================================
+   Image Content Styling
+   ========================================== */
+.learn-genetics-page-wrapper .image-content {
+  position: relative;
+}
+
+.learn-genetics-page-wrapper .image-wrapper {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.learn-genetics-page-wrapper .image-wrapper:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.15);
+}
+
+.learn-genetics-page-wrapper .image-wrapper img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.learn-genetics-page-wrapper .image-wrapper:hover img {
+  transform: scale(1.05);
+}
+
+/* ==========================================
+   Highlight Box
+   ========================================== */
+.learn-genetics-page-wrapper .highlight-box {
+  display: flex;
+  gap: 1rem;
+  background: linear-gradient(135deg, rgba(168, 216, 234, 0.15), rgba(199, 231, 242, 0.15));
+  border-left: 4px solid var(--accent-blue);
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin: 2rem 0;
+}
+
+.learn-genetics-page-wrapper .highlight-icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+
+.learn-genetics-page-wrapper .highlight-box strong {
+  display: block;
+  color: var(--deep-blue);
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.learn-genetics-page-wrapper .highlight-box p {
+  margin: 0;
+  color: var(--text-medium);
+}
+
+/* ==========================================
+   Feature List
+   ========================================== */
+.learn-genetics-page-wrapper .feature-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.learn-genetics-page-wrapper .feature-item {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+.learn-genetics-page-wrapper .feature-icon {
+  font-size: 2.5rem;
+  flex-shrink: 0;
+}
+
+.learn-genetics-page-wrapper .feature-content h4 {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1.3rem;
+  color: var(--deep-blue);
+  margin-bottom: 0.5rem;
+}
+
+.learn-genetics-page-wrapper .feature-content p {
+  margin: 0;
+  font-size: 1rem;
+  color: var(--text-medium);
+  line-height: 1.7;
+}
+
+/* ==========================================
+   Info Cards
+   ========================================== */
+.learn-genetics-page-wrapper .info-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.learn-genetics-page-wrapper .info-card {
+  background: var(--white);
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.learn-genetics-page-wrapper .info-card:hover {
+  transform: translateX(10px);
+  border-color: var(--soft-blue);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+.learn-genetics-page-wrapper .card-number {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--accent-blue);
+  margin-bottom: 0.5rem;
+}
+
+.learn-genetics-page-wrapper .info-card h4 {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1.4rem;
+  color: var(--text-dark);
+  margin-bottom: 0.8rem;
+}
+
+.learn-genetics-page-wrapper .info-card p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--text-medium);
+  line-height: 1.6;
+}
+
+/* ==========================================
+   Process Flow
+   ========================================== */
+.learn-genetics-page-wrapper .process-flow {
+  margin-top: 2.5rem;
+}
+
+.learn-genetics-page-wrapper .process-step {
+  background: var(--white);
+  border-radius: 16px;
+  padding: 2rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+}
+
+.learn-genetics-page-wrapper .process-step:hover {
+  transform: translateX(10px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+.learn-genetics-page-wrapper .step-badge {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--medium-blue), var(--deep-blue));
+  color: white;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.learn-genetics-page-wrapper .process-step h3 {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1.5rem;
+  color: var(--text-dark);
+  margin-bottom: 0.8rem;
+}
+
+.learn-genetics-page-wrapper .process-step p {
+  margin: 0;
+  color: var(--text-medium);
+  line-height: 1.8;
+}
+
+.learn-genetics-page-wrapper .process-arrow {
+  text-align: center;
+  font-size: 2rem;
+  color: var(--accent-blue);
+  margin: 0.5rem 0;
+}
+
+/* ==========================================
+   Callout Box
+   ========================================== */
+.learn-genetics-page-wrapper .callout-box {
+  background: linear-gradient(135deg, var(--medium-blue), var(--deep-blue));
+  color: white;
+  padding: 2rem;
+  border-radius: 16px;
+  margin-top: 2rem;
+  box-shadow: 0 10px 30px rgba(59, 142, 165, 0.3);
+}
+
+.learn-genetics-page-wrapper .callout-box p {
+  margin: 0;
+  color: white;
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+.learn-genetics-page-wrapper .callout-box strong {
+  color: white;
+  font-size: 1.2rem;
+}
+
+/* ==========================================
+   DNA Visual Pattern
+   ========================================== */
+.learn-genetics-page-wrapper .image-pattern .image-wrapper {
+  background: linear-gradient(135deg, var(--light-blue), var(--soft-blue));
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.learn-genetics-page-wrapper .pattern-bg {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.learn-genetics-page-wrapper .dna-visual {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  font-size: 4rem;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+/* ==========================================
+   Full Width Section
+   ========================================== */
+.learn-genetics-page-wrapper .section-full-width .section-container {
+  grid-template-columns: 1fr;
+  text-align: center;
+}
+
+.learn-genetics-page-wrapper .section-full-width .text-content.centered {
+  margin: 0 auto;
+  max-width: 900px;
+}
+
+.learn-genetics-page-wrapper .centered-text {
+  text-align: center;
+}
+
+.learn-genetics-page-wrapper .section-full-width {
+  background: var(--white);
+  padding: 5rem 0;
+}
+
+/* ==========================================
+   Why Genetics Matters Grid
+   ========================================== */
+.learn-genetics-page-wrapper .matters-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 4rem;
+  max-width: 1400px;
+  padding: 0 5%;
+}
+
+.learn-genetics-page-wrapper .matter-card {
+  background: var(--off-white);
+  border-radius: 20px;
+  padding: 2.5rem;
+  text-align: center;
+  transition: all 0.4s ease;
+  border: 2px solid transparent;
+}
+
+.learn-genetics-page-wrapper .matter-card:hover {
+  transform: translateY(-10px);
+  border-color: var(--soft-blue);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  background: var(--white);
+}
+
+.learn-genetics-page-wrapper .matter-icon-img {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 1.5rem;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--sky-blue), var(--light-blue));
+  padding: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.learn-genetics-page-wrapper .matter-icon-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.learn-genetics-page-wrapper .matter-card h3 {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1.5rem;
+  color: var(--text-dark);
+  margin-bottom: 1rem;
+}
+
+.learn-genetics-page-wrapper .matter-card p {
+  margin: 0;
+  color: var(--text-medium);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+/* ==========================================
+   Call to Action Section
+   ========================================== */
+.learn-genetics-page-wrapper .cta-section {
+  background: linear-gradient(135deg, var(--medium-blue), var(--deep-blue));
+  padding: 5rem 5%;
+  text-align: center;
+}
+
+.learn-genetics-page-wrapper .cta-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.learn-genetics-page-wrapper .cta-section h2 {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 3rem;
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.learn-genetics-page-wrapper .cta-section p {
+  font-size: 1.3rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 3rem;
+}
+
+.learn-genetics-page-wrapper .cta-buttons {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.learn-genetics-page-wrapper .cta-btn {
+  padding: 1rem 2.5rem;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.learn-genetics-page-wrapper .cta-btn.primary {
+  background: white;
+  color: var(--deep-blue);
+}
+
+.learn-genetics-page-wrapper .cta-btn.primary:hover {
+  background: var(--off-white);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.learn-genetics-page-wrapper .cta-btn.secondary {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 2px solid white;
+}
+
+.learn-genetics-page-wrapper .cta-btn.secondary:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-3px);
+}
+
+/* ============================================
+   FOOTER - PROPERLY SCOPED & COMPACT
+   ============================================ */
+
+.learn-genetics-page-wrapper .main-footer {
+  position: relative;
+  background: linear-gradient(180deg, #0f172a 0%, #020617 100%);
+  padding: 60px 0 40px;
+  overflow: hidden;
+  border-top: 1px solid rgba(16, 185, 129, 0.15);
+  font-family: 'Quicksand', sans-serif;
+  color: #f1f5f9;
+}
+
+/* --- Background Effects --- */
+.learn-genetics-page-wrapper .footer-bg-grid {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(rgba(136, 247, 208, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(136, 247, 208, 0.02) 1px, transparent 1px);
+  background-size: 50px 50px;
+  mask-image: linear-gradient(to bottom, transparent, black 20%, black 80%, transparent);
+  -webkit-mask-image: linear-gradient(to bottom, transparent, black 20%, black 80%, transparent);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.learn-genetics-page-wrapper .footer-gradient-orb {
+  position: absolute;
+  top: -200px;
+  right: -200px;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.08) 0%, transparent 70%);
+  filter: blur(100px);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.learn-genetics-page-wrapper .footer-container {
+  position: relative;
+  z-index: 10;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 5%;
+}
+
+/* --- Top Section - Brand + Links Side by Side --- */
+.learn-genetics-page-wrapper .footer-top {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  margin-bottom: 50px;
+}
+
+@media (min-width: 1024px) {
+  .learn-genetics-page-wrapper .footer-top {
+    grid-template-columns: 320px 1fr;
+    gap: 60px;
+    align-items: start;
+  }
+}
+
+/* --- Brand & Socials Section --- */
+.learn-genetics-page-wrapper .footer-brand-section {
+  max-width: 100%;
+}
+
+.learn-genetics-page-wrapper .footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.learn-genetics-page-wrapper .footer-logo-circle {
+  width: 28px;
+  height: 28px;
+  background: linear-gradient(135deg, #10b981 0%, #06b6d4 100%);
+  border-radius: 50%;
+  box-shadow: 0 0 20px rgba(16, 185, 129, 0.4);
+  animation: learn-footer-pulse 3s ease-in-out infinite;
+}
+
+@keyframes learn-footer-pulse {
+  0%, 100% { box-shadow: 0 0 20px rgba(16, 185, 129, 0.4); }
+  50% { box-shadow: 0 0 30px rgba(16, 185, 129, 0.6); }
+}
+
+.learn-genetics-page-wrapper .footer-logo-text {
+  font-family: 'Fredoka', sans-serif;
+  font-size: 1.75rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #4ade80 0%, #22d3ee 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.02em;
+}
+
+.learn-genetics-page-wrapper .footer-tagline {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #94a3b8;
+  margin-bottom: 20px;
+  max-width: 320px;
+}
+
+.learn-genetics-page-wrapper .footer-social {
+  display: flex;
+  gap: 16px;
+}
+
+.learn-genetics-page-wrapper .social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #94a3b8;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  text-decoration: none;
+}
+
+.learn-genetics-page-wrapper .social-link:hover {
+  background: rgba(16, 185, 129, 0.1);
+  border-color: rgba(16, 185, 129, 0.4);
+  color: #10b981;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.2);
+}
+
+.learn-genetics-page-wrapper .social-link svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* --- Links Grid - SPREAD ACROSS FULL WIDTH --- */
+.learn-genetics-page-wrapper .footer-links-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px 30px;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .learn-genetics-page-wrapper .footer-links-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    width: 100%;
+  }
+}
+
+.learn-genetics-page-wrapper .footer-column {
+  width: 100%;
+}
+
+.learn-genetics-page-wrapper .footer-column-title {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #f1f5f9;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 18px;
+  position: relative;
+  padding-left: 12px;
+  text-align: left;
+}
+
+.learn-genetics-page-wrapper .footer-column-title::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3px;
+  height: 16px;
+  background: linear-gradient(180deg, #10b981 0%, #06b6d4 100%);
+  border-radius: 2px;
+}
+
+.learn-genetics-page-wrapper .footer-links {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  gap: 12px !important;
+}
+
+.learn-genetics-page-wrapper .footer-links li {
+  display: block !important;
+  width: 100%;
+}
+
+.learn-genetics-page-wrapper .footer-links li a {
+  color: #94a3b8;
+  text-decoration: none;
+  font-size: 0.9375rem;
+  transition: all 0.2s ease;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.learn-genetics-page-wrapper .footer-links li a:hover {
+  color: #e2e8f0;
+  transform: translateX(4px);
+}
+
+/* --- Divider & Bottom --- */
+.learn-genetics-page-wrapper .footer-divider {
+  position: relative;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.05);
+  margin: 40px 0 30px;
+}
+
+.learn-genetics-page-wrapper .divider-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 40px;
+  background: radial-gradient(ellipse, rgba(16, 185, 129, 0.3) 0%, transparent 70%);
+  filter: blur(20px);
+  animation: learn-glow-pulse 4s ease-in-out infinite;
+}
+
+@keyframes learn-glow-pulse {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+.learn-genetics-page-wrapper .footer-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+@media (min-width: 768px) {
+  .learn-genetics-page-wrapper .footer-bottom {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.learn-genetics-page-wrapper .footer-copyright {
+  font-size: 0.875rem;
+  color: #64748b;
+  margin: 0;
+}
+
+/* ==========================================
+   Responsive Design
+   ========================================== */
+@media (max-width: 1200px) {
+  .learn-genetics-page-wrapper .section-container {
+    gap: 3rem;
+    padding: 3rem 5%;
+  }
+
+  .learn-genetics-page-wrapper .text-content h2 {
+    font-size: 2.5rem;
+  }
+
+  .learn-genetics-page-wrapper .matters-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .learn-genetics-page-wrapper .dna-text-display {
+    font-size: 1.5rem;
+  }
+
+  .learn-genetics-page-wrapper .hero-title {
+    font-size: 3.5rem;
+    max-width: 500px;
+  }
+}
+
+@media (max-width: 1023px) {
+  .learn-genetics-page-wrapper .main-footer {
+    padding: 50px 0 35px;
+  }
+  
+  .learn-genetics-page-wrapper .footer-top {
+    gap: 35px;
+    margin-bottom: 40px;
+  }
+}
+
+@media (max-width: 968px) {
+  .learn-genetics-page-wrapper .hero-title {
+    font-size: 3rem;
+    max-width: 400px;
+  }
+
+  .learn-genetics-page-wrapper .section-container {
+    grid-template-columns: 1fr !important;
+    gap: 3rem;
+  }
+
+  .learn-genetics-page-wrapper .section-image-right .section-container,
+  .learn-genetics-page-wrapper .section-image-left .section-container {
+    grid-template-areas: 
+      "image"
+      "text" !important;
+  }
+
+  .learn-genetics-page-wrapper .content-section {
+    min-height: auto;
+  }
+
+  .learn-genetics-page-wrapper .dna-animation-container {
+    padding: 2rem;
+  }
+
+  .learn-genetics-page-wrapper .dna-text-display {
+    font-size: 1.3rem;
+    min-height: 60px;
+  }
+
+  .learn-genetics-page-wrapper .matter-icon-img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .learn-genetics-page-wrapper .hamburger-menu {
+    display: flex;
+  }
+
+  .learn-genetics-page-wrapper .nav-links {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .learn-genetics-page-wrapper .hero-title {
+    font-size: 2.5rem;
+    max-width: 350px;
+  }
+
+  .learn-genetics-page-wrapper .hero-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .learn-genetics-page-wrapper .text-content h2 {
+    font-size: 2rem;
+  }
+
+  .learn-genetics-page-wrapper .lead-text {
+    font-size: 1.1rem;
+  }
+
+  .learn-genetics-page-wrapper .matters-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .learn-genetics-page-wrapper .cta-section h2 {
+    font-size: 2rem;
+  }
+
+  .learn-genetics-page-wrapper .cta-buttons {
+    flex-direction: column;
+  }
+
+  .learn-genetics-page-wrapper .cta-btn {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .learn-genetics-page-wrapper .dna-text-display {
+    font-size: 1.1rem;
+    padding: 1rem;
+  }
+  
+  .learn-genetics-page-wrapper .footer-links-grid {
+    gap: 35px 20px;
+  }
+  
+  .learn-genetics-page-wrapper .footer-divider {
+    margin: 35px 0 25px;
+  }
+}
+
+@media (max-width: 767px) {
+  .learn-genetics-page-wrapper .main-footer {
+    padding: 40px 0 30px;
+  }
+  
+  .learn-genetics-page-wrapper .footer-container {
+    padding: 0 6%;
+  }
+  
+  .learn-genetics-page-wrapper .footer-top {
+    gap: 30px;
+    margin-bottom: 35px;
+  }
+}
+
+@media (max-width: 480px) {
+  .learn-genetics-page-wrapper .hero-section {
+    padding: 5rem 5% 4rem;
+  }
+
+  .learn-genetics-page-wrapper .hero-title {
+    font-size: 2rem;
+    max-width: 280px;
+  }
+
+  .learn-genetics-page-wrapper .section-container {
+    padding: 2rem 5%;
+  }
+
+  .learn-genetics-page-wrapper .text-content h2 {
+    font-size: 1.8rem;
+  }
+
+  .learn-genetics-page-wrapper .info-cards {
+    gap: 1rem;
+  }
+
+  .learn-genetics-page-wrapper .feature-list {
+    gap: 1.5rem;
+  }
+
+  .learn-genetics-page-wrapper .dna-animation-container {
+    padding: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .learn-genetics-page-wrapper .dna-text-display {
+    font-size: 0.95rem;
+    min-height: 50px;
+    letter-spacing: 1px;
+  }
+
+  .learn-genetics-page-wrapper .dna-animation-label {
+    font-size: 0.75rem;
+  }
+
+  .learn-genetics-page-wrapper .matter-icon-img {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .learn-genetics-page-wrapper .footer-links-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
+
+/* ==========================================
+   Smooth Scroll
+   ========================================== */
+.learn-genetics-page-wrapper {
+  scroll-behavior: smooth;
+}
+
+/* ==========================================
+   Selection Styling
+   ========================================== */
+.learn-genetics-page-wrapper ::selection {
+  background: var(--soft-blue);
+  color: white;
+}
+
+.learn-genetics-page-wrapper ::-moz-selection {
+  background: var(--soft-blue);
+  color: white;
+}
+/* ─── Language Button Fix ─────────────────────────────────────────────────── */
+.dna-language-buttons {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.dna-lang-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 36px;
+  height: 32px;
+  padding: 0 8px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 6px;
+  background: transparent;
+  color: inherit;
+  font-size: 13px;
+  font-family: 'Noto Sans', 'Segoe UI', Arial, sans-serif;
+  line-height: 1;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.dna-lang-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.dna-lang-btn.active {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.7);
+  font-weight: 600;
+}

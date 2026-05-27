@@ -1,0 +1,253 @@
+@import './DNA.css';
+
+.patient-intake-page {
+  min-height: 100vh;
+  background: linear-gradient(180deg, var(--cloud-white) 0%, var(--mint-frost) 100%);
+  color: var(--text-dark);
+  font-family: 'Quicksand', sans-serif;
+}
+
+.patient-intake-hero {
+  padding: 5rem 5% 1.8rem;
+}
+
+.patient-intake-hero-inner,
+.patient-intake-layout {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.patient-intake-hero-inner {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 2rem 2.2rem;
+  border-radius: 30px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.94), rgba(226, 247, 244, 0.94));
+  border: 1px solid rgba(95, 196, 184, 0.22);
+  box-shadow: 0 22px 50px rgba(57, 152, 145, 0.09);
+}
+
+.patient-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.45rem 0.95rem;
+  border-radius: 999px;
+  background: rgba(95, 196, 184, 0.14);
+  color: var(--ocean-depth);
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.patient-badge.small {
+  margin-bottom: 0.55rem;
+}
+
+.patient-intake-hero h1,
+.patient-card h2 {
+  font-family: 'Fredoka', sans-serif;
+}
+
+.patient-intake-hero h1 {
+  font-size: clamp(2.4rem, 5vw, 3.2rem);
+  color: #5b9dbd;
+  margin-bottom: 0.65rem;
+}
+
+.patient-hero-actions {
+  min-width: 230px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.patient-primary-btn,
+.patient-outline-btn {
+  border: none;
+  border-radius: 16px;
+  padding: 0.95rem 1.15rem;
+  text-decoration: none;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.patient-primary-btn {
+  background: linear-gradient(135deg, var(--emerald-sea), var(--ocean-depth));
+  color: #fff;
+}
+
+.patient-outline-btn {
+  background: #fff;
+  color: var(--deep-pine);
+  border: 1px solid rgba(59, 169, 156, 0.22);
+}
+
+.patient-intake-layout {
+  padding: 0 5% 4rem;
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  gap: 1.5rem;
+}
+
+.patient-card {
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 28px;
+  border: 1px solid rgba(95, 196, 184, 0.22);
+  box-shadow: 0 18px 45px rgba(59, 169, 156, 0.08);
+  padding: 1.6rem;
+}
+
+.patient-card-head,
+.patient-summary-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.patient-api-pill,
+.patient-risk-pill {
+  padding: 0.75rem 1rem;
+  border-radius: 999px;
+  font-weight: 700;
+  background: rgba(95, 196, 184, 0.12);
+}
+
+.patient-api-pill.connected { color: var(--deep-pine); }
+.patient-api-pill.fallback { color: #8a6700; background: rgba(255, 196, 77, 0.18); }
+
+.patient-risk-pill.high { background: rgba(255, 116, 116, 0.16); color: #b53535; }
+.patient-risk-pill.moderate { background: rgba(255, 196, 77, 0.18); color: #8a6700; }
+.patient-risk-pill.low { background: rgba(95, 196, 184, 0.12); color: var(--deep-pine); }
+
+.patient-section-title {
+  font-family: 'Fredoka', sans-serif;
+  font-size: 1.2rem;
+  margin: 1.3rem 0 0.9rem;
+  color: var(--deep-pine);
+}
+
+.patient-form-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.patient-form-grid.three-col {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.patient-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.patient-field.full {
+  grid-column: 1 / -1;
+}
+
+.patient-field span {
+  font-weight: 700;
+}
+
+.patient-field input,
+.patient-field select {
+  border-radius: 16px;
+  border: 1px solid rgba(95, 196, 184, 0.28);
+  padding: 0.88rem 1rem;
+  font-family: inherit;
+  font-size: 0.96rem;
+  background: rgba(255, 255, 255, 0.96);
+}
+
+.patient-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin: 1rem 0 1.2rem;
+}
+
+.patient-tags span {
+  border-radius: 999px;
+  padding: 0.55rem 0.9rem;
+  background: rgba(95, 196, 184, 0.14);
+  font-weight: 700;
+}
+
+.patient-mini-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.9rem;
+}
+
+.patient-metric-mini {
+  padding: 1rem;
+  border-radius: 20px;
+  background: linear-gradient(135deg, rgba(232, 248, 245, 0.92), rgba(255, 255, 255, 0.92));
+  border: 1px solid rgba(95, 196, 184, 0.18);
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.patient-metric-mini span {
+  color: rgba(18, 50, 68, 0.72);
+  font-size: 0.95rem;
+}
+
+.patient-metric-mini strong {
+  font-family: 'Fredoka', sans-serif;
+  font-size: 1.5rem;
+  color: #5b9dbd;
+}
+
+.patient-summary-list {
+  display: grid;
+  gap: 0.8rem;
+  margin-top: 1.2rem;
+}
+
+.patient-summary-list div {
+  padding: 0.9rem 1rem;
+  border-radius: 18px;
+  background: rgba(248, 252, 251, 0.92);
+  border: 1px solid rgba(95, 196, 184, 0.14);
+}
+
+.patient-alert-box {
+  margin-top: 1.25rem;
+  border-radius: 22px;
+  padding: 1.1rem;
+  background: linear-gradient(135deg, rgba(232, 248, 245, 0.88), rgba(255, 255, 255, 0.96));
+  border: 1px solid rgba(95, 196, 184, 0.16);
+}
+
+.full-width-btn {
+  width: 100%;
+  margin-top: 1rem;
+}
+
+@media (max-width: 1080px) {
+  .patient-intake-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .patient-form-grid.three-col {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .patient-intake-hero-inner,
+  .patient-card-head,
+  .patient-summary-top {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .patient-form-grid.three-col,
+  .patient-mini-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,680 @@
+@import './DNA.css';
+
+.dna-agents-page {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+  min-height: 100vh;
+  background: linear-gradient(180deg, var(--cloud-white) 0%, var(--mint-frost) 100%);
+  color: var(--text-dark);
+  font-family: 'Quicksand', sans-serif;
+}
+
+.dna-agents-page.theme-dark {
+  background: linear-gradient(180deg, #0f1d2f 0%, #13273c 100%);
+  color: #ecf7fb;
+}
+
+.dna-agents-hero {
+  padding: 5rem 5% 1.5rem;
+}
+
+.dna-agents-hero-inner,
+.dna-agents-shell {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.dna-agents-hero-inner {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 2rem 2.2rem;
+  border-radius: 30px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.94), rgba(224, 248, 244, 0.94));
+  border: 1px solid rgba(95, 196, 184, 0.22);
+  box-shadow: 0 22px 50px rgba(57, 152, 145, 0.09);
+}
+
+.theme-dark .dna-agents-hero-inner,
+.theme-dark .dna-patient-chip-card,
+.theme-dark .dna-agents-sidebar-card,
+.theme-dark .dna-agents-main-card,
+.theme-dark .dna-summary-card,
+.theme-dark .dna-chart-card-large,
+.theme-dark .dna-output-card-clean,
+.theme-dark .dna-emergency-card,
+.theme-dark .dna-score-card,
+.theme-dark .dna-highlight-card,
+.theme-dark .dna-next-step-list div,
+.theme-dark .dna-map-box {
+  background: rgba(17, 33, 50, 0.9);
+  color: #ecf7fb;
+  border-color: rgba(143, 218, 210, 0.18);
+}
+
+.dna-agents-badge,
+.panel-kicker {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.45rem 0.95rem;
+  border-radius: 999px;
+  background: rgba(95, 196, 184, 0.14);
+  color: var(--ocean-depth);
+  font-weight: 700;
+}
+
+.theme-dark .dna-agents-badge,
+.theme-dark .panel-kicker {
+  color: #98e7db;
+  background: rgba(95, 196, 184, 0.12);
+}
+
+.dna-agents-hero h1,
+.dna-agents-sidebar-card h3,
+.dna-agents-main-card h2,
+.dna-summary-card h3,
+.dna-chart-card-large h3,
+.dna-output-card-clean h3,
+.dna-emergency-card h3 {
+  font-family: 'Fredoka', sans-serif;
+}
+
+.dna-agents-hero h1 {
+  font-size: clamp(2.3rem, 5vw, 3.15rem);
+  color: #5b9dbd;
+  margin: 0.65rem 0;
+}
+
+.theme-dark .dna-agents-hero h1,
+.theme-dark .dna-score-card strong,
+.theme-dark .dna-output-status {
+  color: #98e7db;
+}
+
+.dna-agents-hero-actions {
+  min-width: 240px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.dna-agents-primary-btn,
+.dna-agents-outline-btn,
+.dna-action-btn,
+.dna-theme-toggle button,
+.dna-agent-actions button {
+  border: none;
+  border-radius: 16px;
+  padding: 0.92rem 1.1rem;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.dna-agents-primary-btn {
+  background: linear-gradient(135deg, var(--emerald-sea), var(--ocean-depth));
+  color: #fff;
+}
+
+.dna-agents-outline-btn,
+.dna-action-btn {
+  background: #fff;
+  color: var(--deep-pine);
+  border: 1px solid rgba(59, 169, 156, 0.22);
+}
+
+.theme-dark .dna-agents-outline-btn,
+.theme-dark .dna-action-btn,
+.theme-dark .dna-theme-toggle {
+  background: rgba(17, 33, 50, 0.94);
+  color: #ecf7fb;
+  border-color: rgba(143, 218, 210, 0.18);
+}
+
+.dna-theme-toggle {
+  display: inline-flex;
+  padding: 0.25rem;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid rgba(59, 169, 156, 0.14);
+}
+
+.dna-theme-toggle button {
+  background: transparent;
+  padding: 0.72rem 1rem;
+}
+
+.dna-theme-toggle button.active {
+  background: rgba(95, 196, 184, 0.16);
+}
+
+.dna-top-strip {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.2rem;
+}
+
+.dna-top-strip-left {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.9rem;
+  flex: 1;
+}
+
+.dna-patient-chip-card,
+.dna-agents-sidebar-card,
+.dna-agents-main-card,
+.dna-summary-card,
+.dna-chart-card-large,
+.dna-output-card-clean,
+.dna-emergency-card {
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 28px;
+  border: 1px solid rgba(95, 196, 184, 0.18);
+  box-shadow: 0 18px 40px rgba(59, 169, 156, 0.08);
+}
+
+.dna-patient-chip-card {
+  padding: 1rem 1.05rem;
+}
+
+.dna-patient-chip-card span {
+  display: block;
+  font-size: 0.92rem;
+  color: rgba(18, 50, 68, 0.72);
+  margin-bottom: 0.35rem;
+}
+
+.theme-dark .dna-patient-chip-card span,
+.theme-dark .dna-next-step-list div,
+.theme-dark .dna-emergency-note,
+.theme-dark .dna-agent-link-card p,
+.theme-dark .dna-output-card-clean p,
+.theme-dark .dna-agents-main-card p,
+.theme-dark .dna-line-chart .dna-axis-text {
+  color: rgba(236, 247, 251, 0.78);
+}
+
+.dna-patient-chip-card strong,
+.dna-output-status,
+.dna-score-card strong,
+.panel-count {
+  font-family: 'Fredoka', sans-serif;
+}
+
+.dna-top-strip-right {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+}
+
+.dna-status-pill,
+.api-pill,
+.panel-count {
+  border-radius: 999px;
+  padding: 0.75rem 1rem;
+  font-weight: 700;
+  background: rgba(95, 196, 184, 0.12);
+}
+
+.dna-status-pill.high { background: rgba(255, 116, 116, 0.16); color: #b53535; }
+.dna-status-pill.moderate { background: rgba(255, 196, 77, 0.18); color: #8a6700; }
+.dna-status-pill.low { color: var(--deep-pine); }
+.api-pill.fallback { background: rgba(255, 196, 77, 0.18); color: #8a6700; }
+.api-pill.gemini-direct { background: rgba(108, 99, 255, 0.15); color: #6c63ff; }
+.api-pill.connected { background: rgba(95, 196, 184, 0.18); color: #2a7d72; }
+.theme-dark .api-pill,
+.theme-dark .dna-status-pill,
+.theme-dark .panel-count { color: #ecf7fb; }
+
+.dna-agents-layout {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 1.4rem;
+  min-width: 0;
+}
+
+.dna-agents-main {
+  min-width: 0;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.dna-agents-sidebar-card,
+.dna-agents-main-card,
+.dna-summary-card,
+.dna-chart-card-large,
+.dna-output-card-clean,
+.dna-emergency-card {
+  padding: 1.4rem;
+}
+
+.panel-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.panel-head.compact { margin-bottom: 0.85rem; }
+
+.dna-agents-list {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.dna-agent-link-card {
+  width: 100%;
+  text-align: left;
+  display: flex;
+  gap: 0.9rem;
+  padding: 1rem;
+  border-radius: 22px;
+  border: 1px solid rgba(95, 196, 184, 0.16);
+  background: rgba(248, 252, 251, 0.92);
+  cursor: pointer;
+}
+
+.theme-dark .dna-agent-link-card {
+  background: rgba(22, 39, 58, 0.92);
+  color: #ecf7fb;
+}
+
+.dna-agent-link-card.active {
+  border-color: rgba(59, 169, 156, 0.55);
+  box-shadow: 0 0 0 2px rgba(59, 169, 156, 0.12);
+}
+
+.dna-agent-link-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 18px;
+  display: grid;
+  place-items: center;
+  background: rgba(95, 196, 184, 0.12);
+  font-size: 1.4rem;
+}
+
+.dna-agent-link-card h4 { margin: 0 0 0.3rem; }
+.dna-agent-link-card p { margin: 0; font-size: 0.93rem; color: rgba(18, 50, 68, 0.72); }
+
+.dna-agent-mini-points {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.dna-agent-mini-points span {
+  padding: 0.55rem 0.85rem;
+  border-radius: 999px;
+  background: rgba(95, 196, 184, 0.12);
+  font-weight: 700;
+}
+
+.dna-agent-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.95rem;
+}
+
+.dna-agent-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.dna-agent-field.full-width,
+.full-width {
+  grid-column: 1 / -1;
+}
+
+.dna-agent-field span {
+  font-weight: 700;
+}
+
+.dna-agent-field input,
+.dna-agent-field select,
+.dna-agent-field textarea {
+  border-radius: 16px;
+  border: 1px solid rgba(95, 196, 184, 0.28);
+  padding: 0.9rem 1rem;
+  font-family: inherit;
+  background: rgba(255, 255, 255, 0.96);
+  color: inherit;
+}
+
+.theme-dark .dna-agent-field input,
+.theme-dark .dna-agent-field select,
+.theme-dark .dna-agent-field textarea {
+  background: rgba(9, 19, 30, 0.86);
+  border-color: rgba(143, 218, 210, 0.18);
+}
+
+.dna-agent-actions {
+  display: flex;
+  gap: 0.8rem;
+  margin-top: 0.3rem;
+}
+
+.dna-dashboard-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 1rem;
+  margin-top: 1rem;
+  min-width: 0;
+}
+
+.dna-dashboard-grid > * {
+  min-width: 0;
+  overflow: hidden;
+}
+
+.dna-score-grid,
+.dna-output-highlight-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.85rem;
+}
+
+.dna-score-card,
+.dna-highlight-card {
+  padding: 1rem;
+  border-radius: 22px;
+  background: rgba(248, 252, 251, 0.92);
+  border: 1px solid rgba(95, 196, 184, 0.15);
+}
+
+.dna-score-card span,
+.dna-highlight-card span,
+.dna-emergency-line span {
+  display: block;
+  font-size: 0.92rem;
+  color: rgba(18, 50, 68, 0.7);
+  margin-bottom: 0.35rem;
+}
+
+.theme-dark .dna-score-card span,
+.theme-dark .dna-highlight-card span,
+.theme-dark .dna-emergency-line span { color: rgba(236, 247, 251, 0.7); }
+
+.dna-score-card strong,
+.dna-highlight-card strong,
+.dna-emergency-line strong {
+  font-size: 1.12rem;
+}
+
+.dna-chart-wrap { overflow: hidden; }
+.dna-line-chart { width: 100%; height: auto; }
+.dna-grid-line { stroke: rgba(91, 157, 189, 0.16); stroke-width: 1; }
+.dna-area-fill { fill: rgba(95, 196, 184, 0.14); }
+.dna-line-path { fill: none; stroke: #5b9dbd; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
+.dna-line-point { fill: #5fc4b8; stroke: white; stroke-width: 3; }
+.dna-axis-text { font-size: 11px; fill: rgba(18, 50, 68, 0.74); }
+.theme-dark .dna-grid-line { stroke: rgba(152, 231, 219, 0.12); }
+.theme-dark .dna-area-fill { fill: rgba(95, 196, 184, 0.18); }
+.theme-dark .dna-line-path { stroke: #98e7db; }
+.theme-dark .dna-line-point { stroke: #0f1d2f; }
+
+.dna-output-card-clean p { margin-top: 0.35rem; }
+.dna-output-status {
+  padding: 0.7rem 1rem;
+  border-radius: 999px;
+  background: rgba(95, 196, 184, 0.12);
+  align-self: flex-start;
+}
+
+.dna-next-step-list {
+  display: grid;
+  gap: 0.75rem;
+  margin-top: 0.95rem;
+}
+
+.dna-next-step-list div {
+  padding: 0.9rem 1rem;
+  border-radius: 18px;
+  background: rgba(248, 252, 251, 0.92);
+  border: 1px solid rgba(95, 196, 184, 0.14);
+}
+
+.dna-emergency-info-grid {
+  display: grid;
+  gap: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+.dna-emergency-line {
+  padding: 0.95rem 1rem;
+  border-radius: 18px;
+  background: rgba(248, 252, 251, 0.92);
+  border: 1px solid rgba(95, 196, 184, 0.15);
+}
+
+.theme-dark .dna-emergency-line { background: rgba(22, 39, 58, 0.92); }
+
+.dna-map-box {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 22px;
+  margin-bottom: 1rem;
+  background: rgba(248, 252, 251, 0.92);
+  border: 1px solid rgba(95, 196, 184, 0.15);
+  overflow: hidden;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+}
+
+.dna-map-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  color: rgba(18, 50, 68, 0.6);
+  font-weight: 600;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.dna-empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 3rem 2rem;
+  margin-top: 1rem;
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(95, 196, 184, 0.18);
+  box-shadow: 0 18px 40px rgba(59, 169, 156, 0.08);
+}
+
+.dna-empty-state-icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.8rem;
+}
+
+.loader-pulse {
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.1); opacity: 0.7; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.dna-empty-state h3 {
+  font-family: 'Fredoka', sans-serif;
+  color: #5b9dbd;
+  margin: 0 0 0.5rem;
+}
+
+.dna-empty-state p {
+  color: rgba(18, 50, 68, 0.7);
+  margin: 0;
+}
+
+.theme-dark .dna-empty-state {
+  background: rgba(17, 33, 50, 0.9);
+  border-color: rgba(143, 218, 210, 0.18);
+}
+
+.theme-dark .dna-empty-state h3 {
+  color: #98e7db;
+}
+
+.theme-dark .dna-empty-state p {
+  color: rgba(236, 247, 251, 0.78);
+}
+
+.dna-map-marker {
+  width: 18px;
+  height: 18px;
+  border-radius: 999px;
+  background: #5fc4b8;
+  box-shadow: 0 0 0 10px rgba(95, 196, 184, 0.12);
+}
+
+.dna-map-box .dna-action-btn { margin-left: auto; }
+
+.dna-emergency-actions {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.dna-emergency-note {
+  margin-top: 0.9rem;
+  font-size: 0.92rem;
+  color: rgba(18, 50, 68, 0.66);
+}
+
+/* ─── Disabled button states ─────────────────────────────────────────────── */
+.dna-agents-primary-btn:disabled,
+.dna-agents-outline-btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* ─── Markdown / AI text rendering ───────────────────────────────────────── */
+.dna-ai-text {
+  line-height: 1.65;
+  word-break: break-word;
+}
+
+.dna-ai-text p {
+  margin: 0.35em 0;
+}
+
+.dna-ai-text p:first-child {
+  margin-top: 0;
+}
+
+.dna-ai-text p:last-child {
+  margin-bottom: 0;
+}
+
+.dna-ai-text h1,
+.dna-ai-text h2,
+.dna-ai-text h3,
+.dna-ai-text h4 {
+  font-family: 'Fredoka', sans-serif;
+  margin: 0.6em 0 0.3em;
+  line-height: 1.3;
+}
+
+.dna-ai-text h1 { font-size: 1.2rem; }
+.dna-ai-text h2 { font-size: 1.1rem; }
+.dna-ai-text h3 { font-size: 1.02rem; }
+.dna-ai-text h4 { font-size: 0.95rem; }
+
+.dna-ai-text strong {
+  font-weight: 700;
+  color: inherit;
+}
+
+.dna-ai-text em {
+  font-style: italic;
+}
+
+.dna-ai-text ul,
+.dna-ai-text ol {
+  margin: 0.4em 0;
+  padding-left: 1.5em;
+}
+
+.dna-ai-text li {
+  margin-bottom: 0.25em;
+}
+
+.dna-ai-text code {
+  font-family: 'Fira Mono', monospace;
+  font-size: 0.88em;
+  padding: 0.15em 0.4em;
+  border-radius: 6px;
+  background: rgba(95, 196, 184, 0.1);
+}
+
+.dna-ai-text a {
+  color: #5b9dbd;
+  text-decoration: underline;
+}
+
+.dna-highlight-card .dna-ai-text {
+  display: inline;
+}
+
+.dna-highlight-card .dna-ai-text p {
+  display: inline;
+  margin: 0;
+}
+
+.theme-dark .dna-ai-text code {
+  background: rgba(152, 231, 219, 0.12);
+}
+
+.theme-dark .dna-ai-text a {
+  color: #98e7db;
+}
+
+@media (max-width: 1100px) {
+  .dna-top-strip,
+  .dna-agents-layout,
+  .dna-dashboard-grid,
+  .dna-agents-hero-inner {
+    grid-template-columns: 1fr;
+    display: grid;
+  }
+
+  .dna-top-strip-left { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 768px) {
+  .dna-top-strip-left,
+  .dna-score-grid,
+  .dna-output-highlight-grid,
+  .dna-agent-form-grid,
+  .dna-emergency-actions {
+    grid-template-columns: 1fr;
+    display: grid;
+  }
+
+  .dna-agent-actions,
+  .dna-top-strip-right,
+  .dna-map-box {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .dna-map-box .dna-action-btn {
+    margin-left: 0;
+  }
+}

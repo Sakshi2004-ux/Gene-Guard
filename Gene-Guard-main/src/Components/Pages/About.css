@@ -1,0 +1,1495 @@
+/* ==========================================
+   About Us Page - FULLY ISOLATED
+   Snow Sky Blue Theme
+   All styles scoped with .about-container
+   ========================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* Reset only within about-container */
+.about-container * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Color Variables - Scoped to About Page */
+.about-container {
+  /* Color Palette - Snow Sky Blue Theme */
+  --sky-blue: #E8F4F8;
+  --light-blue: #C7E7F2;
+  --soft-blue: #A8D8EA;
+  --medium-blue: #7FC4DB;
+  --accent-blue: #5AADCC;
+  --deep-blue: #3B8EA5;
+  --text-dark: #2C3E50;
+  --text-medium: #5D6D7E;
+  --text-light: #85929E;
+  --white: #FFFFFF;
+  --off-white: #F8FAFB;
+}
+
+/* ==========================================
+   Global Styles - About Container Only
+   ========================================== */
+.about-container {
+  font-family: 'Poppins', sans-serif;
+  color: var(--text-dark);
+  background: var(--off-white);
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* ==========================================
+   Hero Section - Background Image Only
+   ========================================== */
+.about-container .hero-section {
+  height: 60vh;
+  min-height: 450px;
+  background-image: url('https://www.htlinfotech.in/wp-content/uploads/2023/03/001-1400X570.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  box-shadow: 0 10px 40px rgba(168, 216, 234, 0.3);
+}
+
+.about-container .hero-section::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+  background: linear-gradient(to top, var(--off-white), transparent);
+  pointer-events: none;
+}
+
+/* ==========================================
+   Enhanced Animations - About Page Only
+   ========================================== */
+@keyframes about-fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes about-fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes about-slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes about-slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes about-pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes about-shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.about-container .slide-in-left {
+  animation: about-slideInLeft 1s ease-out forwards;
+}
+
+.about-container .slide-in-right {
+  animation: about-slideInRight 1s ease-out forwards;
+}
+
+.about-container .fade-in-up {
+  animation: about-fadeInUp 0.8s ease-out forwards;
+}
+
+/* ==========================================
+   Introduction Section
+   ========================================== */
+.about-container .intro-section {
+  padding: 6rem 5%;
+  background: var(--white);
+  text-align: center;
+}
+
+.about-container .intro-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about-container .intro-title {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  background: linear-gradient(135deg, var(--medium-blue), var(--deep-blue));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.about-container .intro-text {
+  font-size: 1.2rem;
+  line-height: 1.9;
+  color: var(--text-medium);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* ==========================================
+   Vision and Mission Sections
+   ========================================== */
+.about-container .vision-section,
+.about-container .mission-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: 6rem 5%;
+}
+
+.about-container .vision-section {
+  background: var(--off-white);
+}
+
+.about-container .mission-section {
+  background: var(--white);
+}
+
+.about-container .vision-section::before,
+.about-container .mission-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 50%, rgba(168, 216, 234, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(199, 231, 242, 0.15) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.about-container .content-wrapper {
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+/* Reverse Layout for Mission */
+.about-container .content-wrapper.reverse {
+  grid-template-areas: "text image";
+}
+
+.about-container .content-wrapper.reverse .text-container {
+  grid-area: text;
+}
+
+.about-container .content-wrapper.reverse .image-container {
+  grid-area: image;
+}
+
+/* Normal Layout for Vision */
+.about-container .vision-section .content-wrapper {
+  grid-template-areas: "image text";
+}
+
+.about-container .vision-section .image-container {
+  grid-area: image;
+}
+
+.about-container .vision-section .text-container {
+  grid-area: text;
+}
+
+/* ==========================================
+   Image Container Styling
+   ========================================== */
+.about-container .image-container {
+  position: relative;
+}
+
+.about-container .image-glow {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  background: linear-gradient(135deg, var(--soft-blue), var(--medium-blue));
+  border-radius: 25px;
+  z-index: 0;
+  opacity: 0.2;
+  transition: opacity 0.3s ease;
+}
+
+.about-container .image-container:hover .image-glow {
+  opacity: 0.4;
+}
+
+.about-container .section-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.about-container .image-container:hover .section-image {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.15);
+}
+
+/* ==========================================
+   Text Content Styling
+   ========================================== */
+.about-container .text-container {
+  padding: 2rem 0;
+}
+
+.about-container .section-title {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 2rem;
+  line-height: 1.2;
+  position: relative;
+}
+
+.about-container .title-gradient {
+  background: linear-gradient(135deg, var(--medium-blue), var(--deep-blue));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  position: relative;
+  display: inline-block;
+}
+
+.about-container .title-gradient::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 0;
+  width: 80px;
+  height: 5px;
+  background: linear-gradient(to right, var(--accent-blue), var(--medium-blue));
+  border-radius: 3px;
+}
+
+.about-container .section-text {
+  font-size: 1.15rem;
+  line-height: 1.9;
+  color: var(--text-medium);
+  margin-bottom: 1.8rem;
+  opacity: 0;
+  animation: about-fadeIn 0.8s ease-out forwards;
+  animation-delay: 0.3s;
+}
+
+.about-container .section-text:nth-child(3) {
+  animation-delay: 0.5s;
+}
+
+/* ==========================================
+   Developers Section
+   ========================================== */
+.about-container .developers-section {
+  padding: 6rem 5%;
+  background: linear-gradient(135deg, var(--sky-blue) 0%, var(--light-blue) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.about-container .developers-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(168, 216, 234, 0.4) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.about-container .developers-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.about-container .developers-title {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 3.5rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.about-container .developers-subtitle {
+  font-size: 1.3rem;
+  color: var(--text-medium);
+  text-align: center;
+  margin-bottom: 4.5rem;
+}
+
+.about-container .developers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 3rem;
+}
+
+/* ==========================================
+   Developer Card Styling
+   ========================================== */
+.about-container .developer-card {
+  background: var(--white);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  transition: all 0.4s ease;
+  animation: about-fadeIn 0.8s ease-out forwards;
+  opacity: 0;
+  position: relative;
+  border: 2px solid transparent;
+}
+
+.about-container .developer-card:hover {
+  transform: translateY(-15px);
+  border-color: var(--soft-blue);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.about-container .developer-image-wrapper {
+  position: relative;
+  overflow: hidden;
+  height: 300px;
+  background: linear-gradient(135deg, var(--sky-blue), var(--light-blue));
+}
+
+.about-container .developer-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.about-container .developer-card:hover .developer-image {
+  transform: scale(1.1);
+}
+
+.about-container .developer-info {
+  padding: 2rem;
+  text-align: center;
+  background: var(--white);
+  position: relative;
+  z-index: 1;
+}
+
+.about-container .developer-name {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1.5rem;
+  color: var(--text-dark);
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.about-container .developer-role {
+  font-size: 1.1rem;
+  color: var(--accent-blue);
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.about-container .developer-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.about-container .skill-tag {
+  background: var(--sky-blue);
+  color: var(--deep-blue);
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.about-container .developer-contact {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  color: var(--text-medium);
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+
+.about-container .developer-contact svg {
+  fill: currentColor;
+}
+
+.about-container .developer-email {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  color: var(--text-medium);
+  font-size: 0.95rem;
+  word-break: break-all;
+}
+
+.about-container .developer-email svg {
+  fill: currentColor;
+}
+
+/* ==========================================
+   Feedback Form Section
+   ========================================== */
+.about-container .feedback-form-section {
+  padding: 6rem 5%;
+  background: var(--white);
+  position: relative;
+  overflow: hidden;
+}
+
+.about-container .feedback-form-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 30%, rgba(168, 216, 234, 0.1) 0%, transparent 40%),
+    radial-gradient(circle at 80% 70%, rgba(199, 231, 242, 0.1) 0%, transparent 40%);
+  pointer-events: none;
+}
+
+.about-container .feedback-form-container {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.about-container .feedback-form-title {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 3.5rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--medium-blue), var(--deep-blue));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.about-container .feedback-form-subtitle {
+  font-size: 1.3rem;
+  color: var(--text-medium);
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.about-container .feedback-form {
+  background: var(--off-white);
+  padding: 3rem;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+.about-container .form-group {
+  margin-bottom: 2rem;
+}
+
+.about-container .form-label {
+  display: block;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--text-dark);
+  margin-bottom: 0.5rem;
+}
+
+.about-container .form-input,
+.about-container .form-textarea {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1rem;
+  font-family: 'Poppins', sans-serif;
+  border: 2px solid var(--light-blue);
+  border-radius: 10px;
+  background: var(--white);
+  color: var(--text-dark);
+  transition: all 0.3s ease;
+}
+
+.about-container .form-input:focus,
+.about-container .form-textarea:focus {
+  outline: none;
+  border-color: var(--accent-blue);
+  box-shadow: 0 0 0 3px rgba(90, 173, 204, 0.1);
+}
+
+.about-container .form-textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.about-container .rating-group {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.about-container .star-rating {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.about-container .star-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 2rem;
+  color: var(--light-blue);
+  transition: all 0.3s ease;
+}
+
+.about-container .star-btn.active,
+.about-container .star-btn:hover {
+  color: #FFD700;
+  transform: scale(1.2);
+}
+
+.about-container .submit-btn {
+  width: 100%;
+  padding: 1.2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--white);
+  background: linear-gradient(135deg, var(--accent-blue), var(--deep-blue));
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Poppins', sans-serif;
+}
+
+.about-container .submit-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(90, 173, 204, 0.4);
+}
+
+.about-container .submit-btn:active {
+  transform: translateY(-1px);
+}
+
+.about-container .success-message {
+  background: #d4edda;
+  color: #155724;
+  padding: 1rem;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.about-container .error-message {
+  background: #f8d7da;
+  color: #721c24;
+  padding: 1rem;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+/* ============================================
+   ABOUT PAGE NAVBAR - WHITE INITIAL STATE
+   ============================================ */
+
+.about-container .dna-main-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 1rem 0;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.about-container .dna-navbar-scrolled {
+  padding: 0.75rem 0;
+  background: rgba(15, 23, 42, 0.95);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(16, 185, 129, 0.15);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+}
+
+.about-container .dna-nav-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+}
+
+.about-container .dna-nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.about-container .dna-logo-circle {
+  width: 20px;
+  height: 20px;
+  background-color: #a7f3d0;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(167, 243, 208, 0.5);
+  flex-shrink: 0;
+}
+
+.about-container .dna-logo-brand {
+  color: #2C3E50;
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+  transition: color 0.3s ease;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.about-container .dna-navbar-scrolled .dna-logo-brand {
+  color: #ffffff;
+}
+
+.about-container .dna-nav-right-section {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-shrink: 0;
+}
+
+.about-container .dna-nav-links {
+  display: flex !important;
+  gap: 1.5rem;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+.about-container .dna-nav-link {
+  color: #2C3E50;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.about-container .dna-navbar-scrolled .dna-nav-link {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.about-container .dna-nav-link:hover {
+  color: #4ade80;
+  transform: translateY(-1px);
+}
+
+.about-container .dna-nav-link.active {
+  color: #4ade80;
+  font-weight: 700;
+}
+
+.about-container .dna-language-buttons {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.about-container .dna-lang-btn {
+  background: transparent;
+  border: 1.5px solid rgba(44, 62, 80, 0.2);
+  color: #2C3E50;
+  padding: 0.35rem 0.7rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  min-width: 40px;
+  text-align: center;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.about-container .dna-navbar-scrolled .dna-lang-btn {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+}
+
+.about-container .dna-lang-btn:hover {
+  border-color: #5FC4B8;
+  background: rgba(95, 196, 184, 0.1);
+  color: #3BA99C;
+}
+
+.about-container .dna-navbar-scrolled .dna-lang-btn:hover {
+  border-color: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+}
+
+.about-container .dna-lang-btn.active {
+  background: rgba(74, 222, 128, 0.15);
+  border-color: rgba(74, 222, 128, 0.5);
+  color: #10b981;
+  font-weight: 700;
+}
+
+.about-container .dna-navbar-scrolled .dna-lang-btn.active {
+  background: rgba(74, 222, 128, 0.2);
+  border-color: rgba(74, 222, 128, 0.5);
+  color: #4ade80;
+}
+
+.about-container .dna-profile-container {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.about-container .dna-profile-trigger {
+  background: transparent;
+  border: 1.5px solid rgba(44, 62, 80, 0.2);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #2C3E50;
+  transition: all 0.3s ease;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.about-container .dna-navbar-scrolled .dna-profile-trigger {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+}
+
+.about-container .dna-profile-trigger:hover,
+.about-container .dna-profile-trigger.active {
+  border-color: #5FC4B8;
+  background: rgba(95, 196, 184, 0.1);
+  color: #3BA99C;
+}
+
+.about-container .dna-navbar-scrolled .dna-profile-trigger:hover,
+.about-container .dna-navbar-scrolled .dna-profile-trigger.active {
+  border-color: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+}
+
+.about-container .dna-profile-icon {
+  width: 19px;
+  height: 19px;
+}
+
+.about-container .dna-profile-dropdown {
+  position: absolute;
+  top: calc(100% + 12px);
+  right: 0;
+  width: 190px;
+  background: rgba(15, 23, 42, 0.97);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 0.5rem;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+  animation: about-dropdown-fadeIn 0.25s ease forwards;
+  z-index: 1001;
+}
+
+@keyframes about-dropdown-fadeIn {
+  from { 
+    opacity: 0; 
+    transform: translateY(-8px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+
+.about-container .dna-dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.7rem 0.9rem;
+  color: #cbd5e1;
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  margin-bottom: 0.15rem;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.about-container .dna-dropdown-item:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: #f1f5f9;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.about-container .dna-hamburger-menu {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 8px;
+  z-index: 1002;
+  background: transparent;
+  border: none;
+  flex-shrink: 0;
+}
+
+.about-container .dna-hamburger-line {
+  width: 24px;
+  height: 2px;
+  background-color: #2C3E50;
+  transition: all 0.3s ease;
+  border-radius: 2px;
+}
+
+.about-container .dna-navbar-scrolled .dna-hamburger-line {
+  background-color: #ffffff;
+}
+
+.about-container .dna-hamburger-menu.active .dna-hamburger-line:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+
+.about-container .dna-hamburger-menu.active .dna-hamburger-line:nth-child(2) {
+  opacity: 0;
+}
+
+.about-container .dna-hamburger-menu.active .dna-hamburger-line:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+.about-container .dna-mobile-menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(15, 23, 42, 0.98);
+  backdrop-filter: blur(20px);
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  animation: about-mobile-fadeIn 0.3s ease;
+}
+
+@keyframes about-mobile-fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.about-container .dna-mobile-menu-overlay .dna-nav-link {
+  font-size: 1.5rem;
+  color: #cbd5e1;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.about-container .dna-mobile-menu-overlay .dna-nav-link:hover {
+  color: #4ade80;
+  transform: scale(1.05);
+}
+
+/* ============================================
+   FOOTER STYLES
+   ============================================ */
+
+.about-container .dna-main-footer {
+  position: relative;
+  background: linear-gradient(180deg, #0f172a 0%, #020617 100%);
+  padding: 80px 24px 40px;
+  overflow: hidden;
+  border-top: 1px solid rgba(16, 185, 129, 0.15);
+  margin-top: auto;
+}
+
+.about-container .dna-footer-bg-grid {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(rgba(136, 247, 208, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(136, 247, 208, 0.02) 1px, transparent 1px);
+  background-size: 50px 50px;
+  mask-image: linear-gradient(to bottom, transparent, black 20%, black 80%, transparent);
+  -webkit-mask-image: linear-gradient(to bottom, transparent, black 20%, black 80%, transparent);
+  z-index: 0;
+}
+
+.about-container .dna-footer-gradient-orb {
+  position: absolute;
+  top: -200px;
+  right: -200px;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.08) 0%, transparent 70%);
+  filter: blur(100px);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.about-container .dna-footer-container {
+  position: relative;
+  z-index: 10;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.about-container .dna-footer-top {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 60px;
+  margin-bottom: 60px;
+}
+
+@media (min-width: 1024px) {
+  .about-container .dna-footer-top {
+    grid-template-columns: 1.2fr 2fr;
+    gap: 80px;
+  }
+}
+
+.about-container .dna-footer-brand-section {
+  max-width: 400px;
+}
+
+.about-container .dna-footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.about-container .dna-footer-logo-circle {
+  width: 28px;
+  height: 28px;
+  background: linear-gradient(135deg, #10b981 0%, #06b6d4 100%);
+  border-radius: 50%;
+  box-shadow: 0 0 20px rgba(16, 185, 129, 0.4);
+  animation: about-footer-pulse 3s ease-in-out infinite;
+  flex-shrink: 0;
+}
+
+@keyframes about-footer-pulse {
+  0%, 100% { box-shadow: 0 0 20px rgba(16, 185, 129, 0.4); }
+  50% { box-shadow: 0 0 30px rgba(16, 185, 129, 0.6); }
+}
+
+.about-container .dna-footer-logo-text {
+  font-size: 1.75rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #4ade80 0%, #22d3ee 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.02em;
+  font-family: 'Poppins', sans-serif;
+}
+
+.about-container .dna-footer-tagline {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #94a3b8;
+  margin-bottom: 32px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.about-container .dna-footer-social {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.about-container .dna-social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #94a3b8;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.about-container .dna-social-link svg {
+  width: 20px;
+  height: 20px;
+}
+
+.about-container .dna-social-link:hover {
+  background: rgba(16, 185, 129, 0.1);
+  border-color: rgba(16, 185, 129, 0.4);
+  color: #10b981;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.2);
+}
+
+.about-container .dna-footer-links-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+}
+
+@media (min-width: 640px) {
+  .about-container .dna-footer-links-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+  }
+}
+
+.about-container .dna-footer-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.about-container .dna-footer-column-title {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #f1f5f9;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 20px;
+  position: relative;
+  padding-left: 12px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.about-container .dna-footer-column-title::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3px;
+  height: 16px;
+  background: linear-gradient(180deg, #10b981 0%, #06b6d4 100%);
+  border-radius: 2px;
+}
+
+.about-container .dna-footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.about-container .dna-footer-links li {
+  margin: 0;
+  padding: 0;
+}
+
+.about-container .dna-footer-links li a {
+  color: #94a3b8;
+  text-decoration: none;
+  font-size: 0.9375rem;
+  transition: all 0.2s ease;
+  display: inline-block;
+  position: relative;
+  font-family: 'Poppins', sans-serif;
+}
+
+.about-container .dna-footer-links li a:hover {
+  color: #e2e8f0;
+  transform: translateX(4px);
+}
+
+.about-container .dna-footer-divider {
+  position: relative;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.05);
+  margin: 60px 0;
+  overflow: visible;
+}
+
+.about-container .dna-divider-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 40px;
+  background: radial-gradient(ellipse, rgba(16, 185, 129, 0.3) 0%, transparent 70%);
+  filter: blur(20px);
+  animation: about-glow-pulse 4s ease-in-out infinite;
+}
+
+@keyframes about-glow-pulse {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+.about-container .dna-footer-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  padding-top: 20px;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .about-container .dna-footer-bottom {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+.about-container .dna-footer-copyright {
+  font-size: 0.875rem;
+  color: #64748b;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* ==========================================
+   Responsive Design
+   ========================================== */
+@media (max-width: 1200px) {
+  .about-container .content-wrapper {
+    gap: 3rem;
+  }
+
+  .about-container .section-title {
+    font-size: 2.5rem;
+  }
+
+  .about-container .developers-title,
+  .about-container .feedback-form-title {
+    font-size: 3rem;
+  }
+
+  .about-container .dna-nav-links { 
+    gap: 1.25rem; 
+  }
+  
+  .about-container .dna-nav-link { 
+    font-size: 0.85rem; 
+  }
+}
+
+@media (max-width: 1024px) {
+  .about-container .dna-nav-links { 
+    display: none !important; 
+  }
+  
+  .about-container .dna-hamburger-menu { 
+    display: flex; 
+  }
+  
+  .about-container .dna-nav-right-section { 
+    gap: 1rem; 
+  }
+
+  .about-container .dna-footer-top {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+  
+  .about-container .dna-footer-brand-section {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 968px) {
+  .about-container .hero-section {
+    height: 45vh;
+    min-height: 350px;
+  }
+
+  .about-container .intro-section,
+  .about-container .vision-section,
+  .about-container .mission-section {
+    min-height: auto;
+    padding: 4rem 5%;
+  }
+
+  .about-container .content-wrapper {
+    grid-template-columns: 1fr !important;
+    gap: 3rem;
+    grid-template-areas: 
+      "image"
+      "text" !important;
+  }
+
+  .about-container .section-title {
+    font-size: 2.3rem;
+  }
+
+  .about-container .section-text {
+    font-size: 1.05rem;
+  }
+
+  .about-container .developers-title,
+  .about-container .feedback-form-title {
+    font-size: 2.5rem;
+  }
+
+  .about-container .developers-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .about-container .developers-section,
+  .about-container .feedback-form-section {
+    padding: 4rem 5%;
+  }
+
+  .about-container .feedback-form {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-container .dna-nav-content { 
+    padding: 0 1.5rem; 
+  }
+  
+  .about-container .dna-lang-btn { 
+    padding: 0.3rem 0.6rem; 
+    font-size: 0.75rem; 
+  }
+  
+  .about-container .dna-logo-brand { 
+    font-size: 1.1rem; 
+  }
+
+  .about-container .dna-main-footer {
+    padding: 60px 20px 30px;
+  }
+  
+  .about-container .dna-footer-top {
+    gap: 40px;
+    margin-bottom: 40px;
+  }
+  
+  .about-container .dna-footer-logo-text {
+    font-size: 1.5rem;
+  }
+  
+  .about-container .dna-footer-tagline {
+    font-size: 0.9rem;
+    margin-bottom: 24px;
+  }
+  
+  .about-container .dna-footer-divider {
+    margin: 40px 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .about-container .hero-section {
+    height: 35vh;
+    min-height: 300px;
+  }
+
+  .about-container .intro-section,
+  .about-container .vision-section,
+  .about-container .mission-section {
+    padding: 3rem 5%;
+  }
+
+  .about-container .intro-title {
+    font-size: 2.5rem;
+  }
+
+  .about-container .section-title {
+    font-size: 2rem;
+  }
+
+  .about-container .developers-title,
+  .about-container .feedback-form-title {
+    font-size: 2rem;
+  }
+
+  .about-container .developers-subtitle,
+  .about-container .feedback-form-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .about-container .developer-image-wrapper {
+    height: 250px;
+  }
+
+  .about-container .dna-footer-links-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
+  .about-container .dna-footer-social {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-container .hero-section {
+    height: 30vh;
+    min-height: 250px;
+  }
+
+  .about-container .intro-title {
+    font-size: 2rem;
+  }
+
+  .about-container .section-title {
+    font-size: 1.8rem;
+  }
+
+  .about-container .section-text {
+    font-size: 1rem;
+  }
+
+  .about-container .developers-title,
+  .about-container .feedback-form-title {
+    font-size: 1.8rem;
+  }
+
+  .about-container .developer-info {
+    padding: 1.5rem;
+  }
+
+  .about-container .feedback-form {
+    padding: 1.5rem;
+  }
+
+  .about-container .dna-language-buttons { 
+    display: none; 
+  }
+  
+  .about-container .dna-nav-content { 
+    padding: 0 1rem; 
+  }
+
+  .about-container .dna-main-footer {
+    padding: 50px 16px 24px;
+  }
+  
+  .about-container .dna-footer-logo-text {
+    font-size: 1.3rem;
+  }
+  
+  .about-container .dna-footer-column-title {
+    font-size: 0.8rem;
+    margin-bottom: 16px;
+  }
+  
+  .about-container .dna-footer-links li a {
+    font-size: 0.875rem;
+  }
+  
+  .about-container .dna-footer-copyright {
+    font-size: 0.8rem;
+  }
+}
+
+/* ==========================================
+   Selection Styling - About Page Only
+   ========================================== */
+.about-container ::selection {
+  background: var(--soft-blue);
+  color: white;
+}
+
+.about-container ::-moz-selection {
+  background: var(--soft-blue);
+  color: white;
+}

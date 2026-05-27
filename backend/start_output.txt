@@ -1,0 +1,34 @@
+
+> gene-guard-backend@1.0.0 start
+> node server.js
+
+(node:15792) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/Downloads/Gene-Guard-agents-v3%20(2)/Gene-Guard-agents-v3/Gene-Guard-main/src/data/dnaAgents.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to D:\Downloads\Gene-Guard-agents-v3 (2)\Gene-Guard-agents-v3\Gene-Guard-main\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[2026-04-04T10:16:33.278Z] [INFO] Starting Gene-Guard backend on port 5050...
+✓ Gemini client initialized with gemini-2.5-flash
+[2026-04-04T10:16:33.280Z] [INFO] ✓ Gemini client initialized
+[2026-04-04T10:16:34.390Z] [INFO] ✓ Gemini API connection successful
+node:events:496
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: listen EADDRINUSE: address already in use :::5050
+    at Server.setupListenHandle [as _listen2] (node:net:1907:16)
+    at listenInCluster (node:net:1964:12)
+    at Server.listen (node:net:2066:7)
+    at Function.listen (D:\Downloads\Gene-Guard-agents-v3 (2)\Gene-Guard-agents-v3\backend\node_modules\express\lib\application.js:635:24)
+    at startServer (file:///D:/Downloads/Gene-Guard-agents-v3%20(2)/Gene-Guard-agents-v3/backend/server.js:540:7)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+Emitted 'error' event on Server instance at:
+    at emitErrorNT (node:net:1943:8)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+  code: 'EADDRINUSE',
+  errno: -4091,
+  syscall: 'listen',
+  address: '::',
+  port: 5050
+}
+
+Node.js v22.11.0
